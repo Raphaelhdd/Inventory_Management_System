@@ -13,6 +13,8 @@ class Inventory:
         Args:
             product (Product): product to add to the inventory  
         """
+        if not isinstance(product, Product):
+            raise ValueError("The product you want to add can't be add to the inventory")
         self.products.append(product)
     
     def remove_product(self, product_name : str):
@@ -21,7 +23,10 @@ class Inventory:
         Args:
             product_name (str): The product's name to remove from the inventory
         """
+        initial_len = len(self.products)
         self.products = [product for product in self.products if product.name != product_name]
+        if initial_len == len(self.products):
+            print(f"{product_name} is not found in the inventory")
 
     def get_product(self, product_name : str) -> Product:
         """
@@ -43,4 +48,6 @@ class Inventory:
         Returns:
             float: total value of the inventory
         """
+        if not self.products:
+            print("The inventory is empty.")
         return sum(product.price * product.quantity for product in self.products)

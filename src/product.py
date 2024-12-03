@@ -7,6 +7,10 @@ class Product:
             price (float): Price of the product.
             quantity (int): Quantity of the product.
         """
+        if price < 0:
+            raise ValueError("Price of a product can't be negative.")
+        if quantity < 0:
+            raise ValueError("Quantity of a product can't be negative.")
         self.name = name
         self.price = price
         self.quantity = quantity
