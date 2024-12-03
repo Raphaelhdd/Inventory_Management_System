@@ -28,6 +28,15 @@ class Product:
         return f"Product (Name : {self.name} , Price : {self.price}, Quantity : {self.quantity}"
     
     def __eq__(self, other: object) -> bool:
+        """
+        Overrides the default equality operator to check the equality of two Products.
+        Args:
+            other (object): object to check for equality
+
+        Returns:
+            bool: True if it's the same Product, otherwise False
+        """
         if not isinstance(other, Product):
             return False
         return (self.name == other.name and self.price == other.price and self.quantity == other.quantity)
+        
