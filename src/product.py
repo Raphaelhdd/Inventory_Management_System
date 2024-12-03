@@ -26,3 +26,8 @@ class Product:
             str: a string that show the products details
         """
         return f"Product (Name : {self.name} , Price : {self.price}, Quantity : {self.quantity}"
+    
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Product):
+            return False
+        return (self.name == other.name and self.price == other.price and self.quantity == other.quantity)
