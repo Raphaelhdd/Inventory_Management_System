@@ -24,6 +24,9 @@ def test_product_value():
     assert product.value() == (969.00 * 5)
 
 def test_product_equality():
+    """
+    Test the equality between two products that have the same attributes.
+    """
     product1 = Product(name="Iphone 16", price=969.00, quantity = 5)
     product2 = Product(name="Iphone 16", price=969.00, quantity = 5)
     assert product1 == product2
