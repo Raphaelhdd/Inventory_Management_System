@@ -8,9 +8,9 @@ def main():
     pytest_args = ["tests/"]
     result = pytest.main(pytest_args)
     if result == 0:
-        print("All Basics tests passed !")
+        print("All Basics tests passed!")
     else:
-        print("Some tests failed")
+        print("Some tests failed. Check details above.")
 
 if __name__ == "__main__":
     main()

@@ -37,7 +37,7 @@ def test_product_value():
     Test the calculation of the total value of a product with its quantity.
     """
     product = Product(name="Iphone 16", price=969.00, quantity = 5)
-    assert product.value() == (969.00 * 5)
+    assert product.value() == 969.00 * 5
 
 
 def test_product_equality():
@@ -49,7 +49,7 @@ def test_product_equality():
     assert product1 == product2
 
 
-def test_product_inequality():
+def test_product_inequality_different_name():
     """
     Test the inequality between two products that have the same attributes.
     """

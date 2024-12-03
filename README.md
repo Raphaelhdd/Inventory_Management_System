@@ -28,12 +28,12 @@ With this inventory, we can add, remove, get products and also calculating the t
     pip install -r requirements.txt
     ```
 
-#Running Tests
+# Running Tests
 
 Ensure you're in the root directory of the project to execute all the tests using main.py:
 
 
 Run the main.py file:
-    ```bash
+    ```
     python3 main.py
     ```

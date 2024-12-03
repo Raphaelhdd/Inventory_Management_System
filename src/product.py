@@ -7,6 +7,8 @@ class Product:
             price (float): Price of the product.
             quantity (int): Quantity of the product.
         """
+        if not name:
+            raise ValueError("Product name can't be empty or None.")
         if price < 0:
             raise ValueError("Price of a product can't be negative.")
         if quantity < 0:
@@ -29,7 +31,7 @@ class Product:
         Returns:
             str: a string that show the products details
         """
-        return f"Product (Name : {self.name} , Price : {self.price}, Quantity : {self.quantity}"
+        return f"Product (Name: {self.name}, Price: {self.price}, Quantity: {self.quantity})"
     
     def __eq__(self, other: object) -> bool:
         """

@@ -24,6 +24,7 @@ def test_add_product(sample_inventory):
     product = Product(name="Iphone 16 Pro", price=1229.00, quantity=10)
     sample_inventory.add_product(product)
     assert sample_inventory.get_product("Iphone 16 Pro") == product
+    assert sample_inventory.get_product("Iphone 16 Pro").quantity == 10
 
 def test_remove_product(sample_inventory):
     """
@@ -45,3 +46,20 @@ def test_total_inventory_value(sample_inventory):
     Tests the calculation of the total value of the sample inventory.
     """
     assert sample_inventory.total_inventory_value() == ((969 * 5) + (1119 * 7))
+
+
+def test_total_inventory_value_after_add_product(sample_inventory):
+    """
+    Tests the calculation of the total value of the sample inventory after adding a product.
+    """
+    product = Product(name="Iphone 16 Pro", price=1229.00, quantity=10)
+    sample_inventory.add_product(product)
+    assert sample_inventory.total_inventory_value() == ((969 * 5) + (1119 * 7) + (1229 * 10))
+
+
+def test_total_inventory_value_after_remove_product(sample_inventory):
+    """
+    Tests the calculation of the total value of the sample inventory after adding a product.
+    """
+    sample_inventory.remove_product("Iphone 16")
+    assert sample_inventory.total_inventory_value() == (1119 * 7) 
